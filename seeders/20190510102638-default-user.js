@@ -6,22 +6,13 @@ require('dotenv').config()
 module.exports = {
   up: async(queryInterface, Sequelize) => {
     let dataSeed = [{
-        name: 'superadmin',
-        email: process.env.SA_EMAIL,
-        password: process.env.SA_PASSWORD,
-        user_type: 'superadmin',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        name: 'admin',
-        email: process.env.ADMIN_EMAIL,
-        password: process.env.ADMIN_PASSWORD,
-        user_type: 'admin',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }
-    ]
+      name: 'superadmin',
+      email: process.env.SA_EMAIL,
+      password: process.env.SA_PASSWORD,
+      user_type: 'superadmin',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }]
     let dataInsert = []
     for (let item of dataSeed) {
       let users = await db.User.findAll({

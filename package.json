@@ -4,7 +4,8 @@
   "description": "RESTful API for TheVirus",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon ./server.js",
+    "dev": "nodemon .",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "npx sequelize-cli db:migrate",
     "rollback": "npx sequelize-cli db:migrate:undo:all",
