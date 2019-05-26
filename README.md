@@ -2,7 +2,6 @@
 
 ## First step
 - run ``` $ cp .env.example .env ``` and edit .env
-- run ``` $ npm install ``` for install dependencies
 - run ``` $ npx sequelize-cli db:migrate ``` for migration database
 - run ``` $ npx sequelize-cli db:seed:all ``` for seeder default data to database
 - run ``` $ npm run dev ``` for start develop server
