@@ -20,8 +20,8 @@ $ npm start
 ```
 
 ### Migration database
-[sequelize](http://docs.sequelizejs.com/){:target="_blank"}
-[sequelize-cli](https://github.com/sequelize/cli){:target="_blank"}
+- [sequelize document](http://docs.sequelizejs.com/)
+- [sequelize-cli document](https://github.com/sequelize/cli)
 ```
 $ npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
 $ npx sequelize-cli db:migrate
