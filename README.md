@@ -1,7 +1,7 @@
 # Fastify-Api
 
 ## First step
-- copy .env.example to .env and edit config
+- run ``` $ cp .env.example .env ``` and edit .env
 - run ``` $ npm install ``` for install dependencies
 - run ``` $ npx sequelize-cli db:migrate ``` for migration database
 - run ``` $ npx sequelize-cli db:seed:all ``` for seeder default data to database
