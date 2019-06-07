@@ -1,5 +1,5 @@
 'use strict';
-const db = require('../models')
+const db = require('../../app/models')
 const bcrypt = require('bcrypt');
 require('dotenv').config()
 
@@ -22,7 +22,7 @@ module.exports = {
       });
       if (users.length == 0) {
         item.password = await new Promise(resolve => {
-          bcrypt.hash(item.password, 10, function(err, hash) {
+          bcrypt.hash(item.password, 10, function (err, hash) {
             resolve(hash)
           });
         })

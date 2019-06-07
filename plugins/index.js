@@ -11,6 +11,8 @@ async function plugin(fastify, options) {
   fastify.register(require('./hooks'))
   fastify.register(require('./db-connector'))
   fastify.register(require('./nodemailer'))
+  fastify.register(require('./fastify-file-upload'))
+  fastify.register(require('./i18n'))
 }
 
 // Wrapping a plugin function with fastify-plugin exposes the decorators,

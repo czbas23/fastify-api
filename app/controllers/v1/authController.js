@@ -9,6 +9,7 @@ exports.login = (fastify) => {
         tags: ['auth'],
         body: {
           type: 'object',
+          required: ['email', 'password'],
           properties: {
             email: {
               type: 'string',
@@ -18,8 +19,7 @@ exports.login = (fastify) => {
               type: 'string',
               minLength: 8
             }
-          },
-          required: ['email', 'password']
+          }
         }
       }
     },
@@ -42,7 +42,7 @@ exports.login = (fastify) => {
           email: user.email,
           user_type: user.user_type,
         },
-      }, { expiresIn: '1d' })
+      }, { expiresIn: '30d' })
       reply.send({ token })
     }
   }
@@ -51,12 +51,14 @@ exports.login = (fastify) => {
 exports.signup = (fastify) => {
   return {
     options: {
+      onRequest: [fastify.hooks.authenticate, fastify.hooks.role_admin],
       schema: {
         summary: 'Signup',
         description: '',
         tags: ['auth'],
         body: {
           type: 'object',
+          required: ['email', 'password', 'name'],
           properties: {
             email: {
               type: 'string',
@@ -69,8 +71,7 @@ exports.signup = (fastify) => {
             name: {
               type: 'string',
             },
-          },
-          required: ['email', 'password', 'name']
+          }
         }
       }
     },
@@ -88,7 +89,7 @@ exports.signup = (fastify) => {
         name: request.body.name,
       }
       dataSave.password = await new Promise(resolve => {
-        bcrypt.hash(request.body.password, 10, function(err, hash) {
+        bcrypt.hash(request.body.password, 10, function (err, hash) {
           resolve(hash)
         });
       })

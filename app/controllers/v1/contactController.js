@@ -1,5 +1,3 @@
-const bcrypt = require('bcrypt')
-
 exports.index = (fastify) => {
   return {
     options: {

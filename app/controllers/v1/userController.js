@@ -1,5 +1,3 @@
-const bcrypt = require('bcrypt')
-
 exports.index = (fastify) => {
   return {
     options: {
@@ -7,16 +5,7 @@ exports.index = (fastify) => {
       schema: {
         description: '',
         tags: ['user'],
-        summary: 'Get all users',
-        params: {
-          type: 'object',
-          properties: {
-            id: {
-              type: 'string',
-              description: 'user id'
-            }
-          }
-        },
+        summary: 'Get all users'
       }
     },
     handler: async(request, reply) => {

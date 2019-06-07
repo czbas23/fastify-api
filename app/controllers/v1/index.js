@@ -1,0 +1,5 @@
+exports.authController = require('../../controllers/v1/authController')
+exports.contactController = require('../../controllers/v1/contactController')
+exports.userController = require('../../controllers/v1/userController')
+exports.blogController = require('../../controllers/v1/blogController')
+exports.uploadController = require('../../controllers/v1/uploadController')
