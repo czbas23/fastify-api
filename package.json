@@ -24,7 +24,7 @@
     "fastify-file-upload": "^1.0.0",
     "fastify-formbody": "^3.1.0",
     "fastify-helmet": "^3.0.0",
-    "fastify-jwt": "^0.10.0",
+    "fastify-jwt": "^4.2.0",
     "fastify-mysql": "^0.2.0",
     "fastify-routes": "^2.0.3",
     "fastify-sensible": "^2.0.1",
